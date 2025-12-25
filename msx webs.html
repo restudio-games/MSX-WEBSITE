@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Motion Studio X</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        /* ===== Top Bar ===== */
+        .topbar {
+            height: 90px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .topbar img {
+            height: 200px;
+        }
+
+        /* ===== Header ===== */
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            padding: 60px;
+        }
+
+        .text-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .content img {
+            max-width: 380px; /* تكبير الصورة من 300px إلى 380px */
+            margin-left: auto;
+            margin-right: 60px;
+        }
+
+        /* ===== Download ===== */
+        .download {
+            background: #444;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .download h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 56px;
+            color: white;
+        }
+
+        .download a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: #ff6f61;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 20px;
+        }
+
+        .download a:hover {
+            opacity: 0.9;
+        }
+
+        /* ===== OS Section ===== */
+        .os-section {
+            position: relative;
+            padding: 80px 20px;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .os-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('https://i.postimg.cc/wvBXrzRf/FOREST.png') center / cover;
+            transform: scale(1.5);
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        .os-section h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 48px;
+        }
+
+        .os-list {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .os-item i {
+            font-size: 100px;
+        }
+
+        /* ===== Comparison ===== */
+        .comparison-section {
+            padding: 70px 20px;
+            background: #f0f0f0;
+            text-align: center;
+        }
+
+        .comparison-section h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+
+        .comparison-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .comparison-item {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .comparison-item h3 {
+            font-family: 'Archivo Black', sans-serif;
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            position: relative;
+            padding: 90px 20px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .faq::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('https://i.postimg.cc/Zqj36qKy/JAPAN-FOREST.png') center / cover;
+            transform: scale(1.2);
+            z-index: -1;
+        }
+
+        .faq h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            background: rgba(0,0,0,0.6);
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .faq-item h3 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background-color: #888888;
+            color: white;
+            text-align: center;
+            padding: 20px 0 20px 0;
+        }
+
+        .footer img {
+            display: block;
+            margin: 0 auto 10px auto;
+            height: 210px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 16px;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 24px;
+        }
+
+        .social-links a:hover {
+            color: #ff6f61;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="topbar">
+    <img src="https://i.postimg.cc/Jh9yNBCp/msx.png" alt="MSX Logo">
+</div>
+
+<!-- Header -->
+<div class="content">
+    <div class="text-content">
+        <h1>motion studio x</h1>
+        <p>Motion Studio X (MSX) — a professional 2D animation tool built on OpenToonz.</p>
+    </div>
+    <img src="https://i.postimg.cc/gJjqnpsG/anime-char-(msx).png" alt="MSX">
+</div>
+
+<!-- Download -->
+<div class="download">
+    <h2>Download MSX on</h2>
+    <a href="https://restudio-games.itch.io/motion-studio-x" target="_blank">
+        <i class="fa-brands fa-itch-io"></i> itch.io
+    </a>
+</div>
+
+<!-- OS -->
+<div class="os-section">
+    <h2>How many operating systems does MSX support?</h2>
+    <div class="os-list">
+        <div class="os-item"><i class="fa-brands fa-windows"></i><p>Windows</p></div>
+        <div class="os-item"><i class="fa-brands fa-linux"></i><p>Linux</p></div>
+        <div class="os-item"><i class="fa-brands fa-apple"></i><p>macOS</p></div>
+    </div>
+</div>
+
+<!-- Comparison -->
+<div class="comparison-section">
+    <h2>Motion Studio X Vs OpenToonz</h2>
+    <div class="comparison-list">
+        <div class="comparison-item">
+            <h3>Motion Studio X</h3>
+            <p>Professional 2D animation tool built on OpenToonz with integrated Roland Script editor.</p>
+        </div>
+        <div class="comparison-item">
+            <h3>OpenToonz</h3>
+            <p>Open-source 2D animation software without Roland Script integration.</p>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq">
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+        <h3>1. What is the current development status of MSX?</h3>
+        <p>MSX is currently under active development and has not yet reached a stable official release.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>2. Can I use MSX right now?</h3>
+        <p>No. MSX is still in an early development stage and no public builds are available yet.</p>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <img src="https://i.postimg.cc/7ZRcNqsK/flower.png" alt="Flower Icon">
+    <p>© 2025 Restudio Games. All rights reserved.</p>
+    <div class="social-links">
+        <a href="https://github.com/restudio-games" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/restudio_games/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/RESTUDIO_GAMES" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    </div>
+</div>
+
+</body>
+</html>
