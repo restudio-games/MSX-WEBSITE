@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Motion Studio X</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.postimg.cc/tJLt8mfs/X-logo.png" type="image/png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/tJLt8mfs/X-logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://i.postimg.cc/tJLt8mfs/X-logo.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="https://i.postimg.cc/tJLt8mfs/X-logo.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://i.postimg.cc/tJLt8mfs/X-logo.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="https://i.postimg.cc/tJLt8mfs/X-logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.postimg.cc/tJLt8mfs/X-logo.png">
+    <meta name="msapplication-TileImage" content="https://i.postimg.cc/tJLt8mfs/X-logo.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Josefin Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* ===== Top Bar ===== */
+        .topbar {
+            height: 90px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            gap: 40px;
+        }
+
+        .topbar img {
+            height: 200px;
+        }
+
+        /* ===== plain buttons – english ===== */
+        .nav-buttons {
+            display: flex;
+            gap: 18px;
+            margin-left: auto;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1.2rem;
+            color: #2c2c2c;
+            padding: 6px 10px;
+            cursor: pointer;
+            transition: none;
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-btn:active {
+            transform: none;
+        }
+
+        .nav-btn:focus-visible {
+            outline: 1px dotted #aaa;
+        }
+
+        /* rest of styles (identical to original, only button labels changed) */
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            padding: 60px;
+        }
+
+        .text-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 69px;
+            margin-bottom: 10px;
+        }
+
+        .content img {
+            max-width: 380px;
+            margin-left: auto;
+            margin-right: 60px;
+        }
+
+        .download {
+            background: #444;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .download h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 56px;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .itch-badge img {
+            height: 80px;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .itch-badge img:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .os-section {
+            position: relative;
+            padding: 80px 20px;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .os-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('https://i.postimg.cc/wvBXrzRf/FOREST.png') center / cover;
+            transform: scale(1.5);
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        .os-section h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 48px;
+        }
+
+        .os-list {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .os-item i {
+            font-size: 100px;
+        }
+
+        .comparison-section {
+            padding: 70px 20px;
+            background: #f0f0f0;
+            text-align: center;
+        }
+
+        .comparison-section h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+
+        .comparison-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .comparison-item {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .comparison-item h3 {
+            font-family: 'Archivo Black', sans-serif;
+        }
+
+        .faq {
+            position: relative;
+            padding: 90px 20px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .faq::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('https://i.postimg.cc/Zqj36qKy/JAPAN-FOREST.png') center / cover;
+            transform: scale(1.2);
+            z-index: -1;
+        }
+
+        .faq h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            background: rgba(0,0,0,0.6);
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .faq-item h3 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .footer {
+            background-color: #888888;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer img {
+            display: block;
+            margin: 0 auto 15px auto;
+            height: 150px;
+        }
+
+        .footer p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        .social-links {
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 24px;
+        }
+
+        .social-links a:hover {
+            color: #ff6f61;
+        }
+
+        .section-marker {
+            scroll-margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- top bar with ENGLISH buttons (very plain, no effects) -->
+<div class="topbar">
+    <img src="https://i.postimg.cc/Jh9yNBCp/msx.png" alt="MSX Logo">
+    
+    <div class="nav-buttons">
+        <button class="nav-btn" onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'});">Home</button>
+        <button class="nav-btn" onclick="document.getElementById('os').scrollIntoView({behavior:'smooth'});">Operating system</button>
+        <button class="nav-btn" onclick="document.getElementById('comparison').scrollIntoView({behavior:'smooth'});">Compare</button>
+        <button class="nav-btn" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'});">FAQ</button>
+        <button class="nav-btn" onclick="document.getElementById('footer').scrollIntoView({behavior:'smooth'});">Contact</button>
+    </div>
+</div>
+
+<!-- HOME section -->
+<div id="home" class="content section-marker">
+    <div class="text-content">
+        <h1>motion studio X</h1>
+        <p>Motion Studio X (MSX) is an open community project that allows creators to build their own tools and programs on top of OpenToonz.</p>
+    </div>
+    <img src="https://i.postimg.cc/6qpVGHpL/rsm-tkhtyty-lqt-mlwn.png" alt="MSX">
+</div>
+
+<!-- OS section -->
+<div id="os" class="os-section section-marker">
+    <h2>How many operating systems does MSX (OpenToonz) support?</h2>
+    <div class="os-list">
+        <div class="os-item"><i class="fa-brands fa-windows"></i><p>Windows</p></div>
+        <div class="os-item"><i class="fa-brands fa-linux"></i><p>Linux</p></div>
+        <div class="os-item"><i class="fa-brands fa-apple"></i><p>macOS</p></div>
+    </div>
+</div>
+
+<!-- COMPARISON section -->
+<div id="comparison" class="comparison-section section-marker">
+    <h2>Motion Studio X Vs OpenToonz</h2>
+    <div class="comparison-list">
+        <div class="comparison-item">
+            <h3>Motion Studio X</h3>
+            <p>Motion Studio X (MSX) is an open community project that allows creators to build their own tools and programs on top of OpenToonz.</p>
+        </div>
+        <div class="comparison-item">
+            <h3>OpenToonz</h3>
+            <p>OpenToonz is an open-source 2D animation software used for professional and independent animation production.</p>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ section -->
+<div id="faq" class="faq section-marker">
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+        <h3>1. What is the current development status of MSX?</h3>
+        <p>MSX is a community project built on OpenToonz. It’s not a standalone program — everyone can create and customize their own projects.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>2. Can I use MSX right now?</h3>
+        <p>Yes. Any user can start building custom projects on OpenToonz. There’s no official release, as it depends on what each user creates.</p>
+    </div>
+    <div class="faq-item">
+        <h3>3. Is MSX a standalone program?</h3>
+        <p>No. MSX is entirely dependent on OpenToonz and on the users themselves if they wish to modify the program.</p>
+    </div>
+</div>
+
+<!-- FOOTER / CONTACT section -->
+<div id="footer" class="footer section-marker">
+    <img src="https://i.postimg.cc/7ZRcNqsK/flower.png" alt="Flower Icon">
+    <p>© 2026 Restudio Games. All rights reserved.</p>
+    <div class="social-links">
+        <a href="https://github.com/restudio-games" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/restudio_games/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/RESTUDIO_GAMES" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    </div>
+</div>
+
+<!-- no extra scripts, only plain buttons -->
+</body>
+</html>
