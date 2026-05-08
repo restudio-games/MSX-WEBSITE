@@ -1,3 +1,3 @@
 Links
 
-- Website: https://restudio-games.github.io/MSX-WEBSITE/
+- Website: https://restudiosoftwarelaboratories.github.io/MSX-WEBSITE/
